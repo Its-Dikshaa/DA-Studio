@@ -1,60 +1,150 @@
-import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Product & UI/UX Design — DA🌻",
+  title: "Product & UI/UX design — DA🌻",
   description: "Product and UI/UX design services by DA🌻.",
 };
 
 export default function ProductDesignPage() {
   return (
-    <div className="px-6 md:px-16 py-16 max-w-5xl mx-auto">
-      <Reveal>
-        <span className="font-mono text-xs uppercase tracking-wider text-coral mb-3 block">
-          Service 02
-        </span>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8">
-          Product & UI/UX Design
-        </h1>
-        <p className="text-ink/75 text-lg md:text-xl leading-relaxed mb-12">
-          Crafting high-fidelity interface systems, component libraries, and interactive prototypes tailored for seamless developer handoff and scale.
-        </p>
-      </Reveal>
-
-      <Reveal delay={0.2} className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-ink/15 pt-12">
-        <div>
-          <h3 className="text-2xl font-bold mb-4">What we do</h3>
-          <ul className="space-y-3 text-ink/80 text-base">
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Full web & mobile app interface design
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Figma design systems & UI component kits
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Micro-interactions & animated prototypes
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Accessibility (a11y) & design token specs
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Deliverables</h3>
-          <p className="text-ink/70 leading-relaxed text-sm">
-            Production-ready Figma files, design token variables, interactive prototypes, and clear developer handoff documentation.
+    <>
+      <section className="page-hero page-hero--violet service-page-hero" id="top">
+        <Reveal className="page-hero-copy">
+          <p className="crumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <Link href="/services">Services</Link>
+            <span>/</span> Product design
           </p>
-        </div>
-      </Reveal>
+          <h1>
+            Useful first.
+            <br />
+            <em>Beautiful</em>
+            <br />
+            because of it.
+          </h1>
+          <p>
+            Product and UI/UX design that makes complicated ideas feel familiar
+            from the very first tap.
+          </p>
+        </Reveal>
+        <Reveal className="hero-orbital" aria-hidden="true">
+          <b>✺</b>
+          <i>
+            the details
+            <br />
+            are the product
+          </i>
+        </Reveal>
+      </section>
 
-      <div className="mt-16 pt-8 border-t border-ink/15 flex justify-between items-center">
-        <Link href="/services" className="font-mono text-xs uppercase text-ink/70 hover:text-ink">
-          ← Back to Services
+      <section className="page-section">
+        <Reveal className="section-grid">
+          <div>
+            <span className="chapter">( The work )</span>
+            <h2>
+              More than a<br />
+              nice <em>set of screens.</em>
+            </h2>
+          </div>
+          <div className="body-copy">
+            <p>
+              We design digital products around real behaviour, a clear content
+              hierarchy and the small moments that keep a person oriented.
+            </p>
+            <p>
+              From early concepts to an extendable design system, we make
+              experiences that your team can build confidently and your
+              customers can use without thinking twice.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="page-section page-section--compact">
+        <Reveal>
+          <span className="chapter">( Typical outputs )</span>
+        </Reveal>
+        <div className="deliverable-grid">
+          <Reveal as="article">
+            <span>01</span>
+            <h3>Product journeys</h3>
+            <p>
+              Flows, information architecture and content structure that let the
+              important action feel like the natural next one.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02</span>
+            <h3>Interface direction</h3>
+            <p>
+              A visual language with enough character to be remembered and enough
+              logic to be used every day.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03</span>
+            <h3>Interactive prototypes</h3>
+            <p>
+              Clickable, testable prototypes that help stakeholders see and users
+              react before the build gets expensive.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04</span>
+            <h3>Design systems</h3>
+            <p>
+              Reusable components, states and rules that make quality easier to
+              keep as the product gets bigger.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-section pale-violet">
+        <Reveal>
+          <span className="chapter">( Our rhythm )</span>
+        </Reveal>
+        <div className="service-flow">
+          <Reveal as="article">
+            <span>01 / Map</span>
+            <h3>See the whole</h3>
+            <p>Set the user journeys, content hierarchy and design principles.</p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02 / Explore</span>
+            <h3>Give it shape</h3>
+            <p>
+              Move through deliberate concepts until there is a clear visual
+              voice.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03 / Refine</span>
+            <h3>Make it work</h3>
+            <p>Handle states, edge cases and interaction details with care.</p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04 / Systemise</span>
+            <h3>Make it last</h3>
+            <p>
+              Document the decisions so the next screen gets easier, not harder.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-cta">
+        <h2>
+          Have a product that
+          <br />
+          needs better <em>instincts?</em>
+        </h2>
+        <Link className="button" href="/contact">
+          Show us the brief <span>↗</span>
         </Link>
-        <Link href="/contact" className="font-bold text-base text-coral hover:underline">
-          Start a Product Design Brief ↗
-        </Link>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

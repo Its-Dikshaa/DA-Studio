@@ -1,261 +1,449 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Marquee from "@/components/Marquee";
-import WorkGrid from "@/components/WorkGrid";
-import ServicesAccordion from "@/components/ServicesAccordion";
-
-const servicesData = [
-  {
-    number: "01",
-    title: "UX Strategy & Research",
-    description:
-      "Clarifying product positioning, user journeys, information architecture, and core features before code is written.",
-    deliverables: "Positioning map · User flows · Feature prioritization · UX Audit",
-  },
-  {
-    number: "02",
-    title: "Product & UI/UX Design",
-    description:
-      "Crafting high-fidelity interface systems, component libraries, and interactive prototypes tailored for scale.",
-    deliverables: "Figma design system · App interfaces · Interactive prototypes · Micro-interactions",
-  },
-  {
-    number: "03",
-    title: "Web Design & Development",
-    description:
-      "Building fast, accessible, motion-rich websites using Next.js, TypeScript, and modern animation standards.",
-    deliverables: "Next.js web app · Custom animations · CMS integration · Performance optimization",
-  },
-  {
-    number: "04",
-    title: "Brand Systems & Motion",
-    description:
-      "Defining distinctive visual identities, typographic systems, and motion guidelines that bring digital touchpoints to life.",
-    deliverables: "Brand guidelines · Kinetic logo assets · Motion guidelines · UI motion tokens",
-  },
-];
-
-const marqueeItems = [
-  "UX Strategy",
-  "Product Design",
-  "Next.js Development",
-  "Motion Systems",
-  "Design Tokens",
-  "Kinetic Branding",
-];
+import LeadForm from "@/components/LeadForm";
 
 export default function Home() {
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative px-6 md:px-16 pt-16 pb-24 border-b border-ink/10 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
-            <Reveal delay={0.1}>
-              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-ink/70 mb-6">
-                <span className="w-2 h-2 rounded-full bg-coral animate-ping" />
-                <span>DA🌻 Studio · Available for Q4/Q1</span>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.92] text-ink">
-                Digital products <br />
-                with a little more <br />
-                <em className="font-serif italic font-normal text-coral">feeling.</em>
-              </h1>
-            </Reveal>
-
-            <Reveal delay={0.3}>
-              <p className="mt-8 text-lg md:text-xl text-ink/75 max-w-xl leading-relaxed">
-                An independent design & development studio shaping sharp web platforms, mobile products, and kinetic brand systems.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.4}>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 bg-ink text-paper rounded-full text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-4 hover:bg-coral transition-all transform hover:-translate-y-1"
-                >
-                  <span>Start a project</span>
-                  <span className="text-acid text-lg">↗</span>
-                </Link>
-                <Link
-                  href="/work"
-                  className="text-xs font-extrabold uppercase tracking-wider text-ink border-b-2 border-ink pb-1 hover:text-coral hover:border-coral transition-colors"
-                >
-                  Explore archive ↗
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Hero Art Graphic */}
-          <div className="lg:col-span-5 relative min-h-[380px] flex items-center justify-center">
-            <Reveal delay={0.3}>
-              <div className="relative w-full max-w-md aspect-square flex items-center justify-center">
-                {/* Orbital Ring */}
-                <div className="absolute inset-0 border border-ink/20 rounded-full animate-[spin_40s_linear_infinite]" />
-                <div className="absolute inset-8 border border-dashed border-coral/30 rounded-full" />
-
-                {/* Sun Element */}
-                <div className="w-56 h-56 rounded-full bg-acid border border-ink shadow-2xl flex items-center justify-center relative z-10">
-                  <span className="text-7xl font-extrabold tracking-tighter text-ink -translate-x-1">
-                    DA
-                  </span>
-                </div>
-
-                {/* Floating Card */}
-                <div className="absolute bottom-4 right-0 z-20 w-64 p-5 bg-ink text-paper rounded-2xl shadow-2xl transform rotate-6 border border-paper/10">
-                  <div className="flex gap-1.5 mb-4">
-                    <span className="w-2.5 h-2.5 rounded-full bg-coral" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-orange" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-acid" />
-                  </div>
-                  <b className="block text-2xl font-bold tracking-tight text-paper leading-tight">
-                    Intentional by design.
-                  </b>
-                  <small className="block mt-4 font-mono text-[9px] uppercase tracking-wider text-acid">
-                    Next.js + Motion ✺
-                  </small>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Marquee Ticker */}
-      <Marquee items={marqueeItems} />
-
-      {/* Selected Work Section */}
-      <section className="px-6 md:px-16 py-28 bg-ink text-paper">
-        <Reveal>
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-            <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-acid mb-3 block">
-                Selected Work
-              </span>
-              <h2 className="text-4xl md:text-7xl font-extrabold tracking-tighter">
-                Recent Case Studies
-              </h2>
-            </div>
-            <p className="text-paper/60 text-sm max-w-xs leading-relaxed">
-              Explore our latest collaborations in fintech, wellbeing, and travel discovery.
-            </p>
-          </div>
-        </Reveal>
-
-        <WorkGrid />
-      </section>
-
-      {/* Services Section */}
-      <section className="px-6 md:px-16 py-28 bg-paper border-b border-ink/10">
-        <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-            <div className="lg:col-span-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-coral mb-3 block">
-                Capabilities
-              </span>
-              <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-ink">
-                Services & Focus
-              </h2>
-            </div>
-            <div className="lg:col-span-8 flex items-end">
-              <p className="text-ink/70 text-base md:text-lg max-w-lg leading-relaxed">
-                We work across every phase of digital product design — from initial UX discovery to production Next.js frontend engineering.
-              </p>
-            </div>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <ServicesAccordion services={servicesData} />
-        </Reveal>
-      </section>
-
-      {/* Process Section */}
-      <section className="px-6 md:px-16 py-28 bg-acid text-ink border-b border-ink/10">
-        <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-            <div className="lg:col-span-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-ink/70 mb-3 block">
-                How we work
-              </span>
-              <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-ink">
-                Our Rhythm
-              </h2>
-            </div>
-            <div className="lg:col-span-8 flex items-end">
-              <p className="text-ink/80 text-base md:text-lg max-w-lg leading-relaxed">
-                A focused 4-step process designed to keep decision-making clear, momentum high, and results crisp.
-              </p>
-            </div>
-          </div>
-        </Reveal>
-
-        <div className="border-t border-ink/20 divide-y divide-ink/20">
-          {[
-            {
-              step: "01",
-              name: "Listen & Uncover",
-              desc: "Deep-dive into the business goals, user friction, and underlying market opportunity.",
-            },
-            {
-              step: "02",
-              name: "Strategy & Architecture",
-              desc: "Define the core product concept, key user journeys, and technical blueprint.",
-            },
-            {
-              step: "03",
-              name: "Design System & Interface",
-              desc: "Build a scalable UI component system with custom motion tokens and micro-interactions.",
-            },
-            {
-              step: "04",
-              name: "Build & Polish",
-              desc: "Engineered in Next.js & Tailwind CSS with flawless responsiveness and SEO best practices.",
-            },
-          ].map((item, idx) => (
-            <Reveal key={idx} delay={idx * 0.1}>
-              <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-                <span className="md:col-span-2 font-mono text-xs text-coral font-bold">
-                  {item.step}
-                </span>
-                <h3 className="md:col-span-5 text-2xl font-bold tracking-tight text-ink">
-                  {item.name}
-                </h3>
-                <p className="md:col-span-5 text-ink/70 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="px-6 md:px-16 py-32 bg-ink text-paper text-center">
-        <Reveal>
-          <span className="font-mono text-xs uppercase tracking-wider text-acid mb-4 block">
-            Start a conversation
-          </span>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter max-w-4xl mx-auto leading-tight">
-            Have a project in mind? <br />
-            <em className="font-serif italic font-normal text-coral">Let&apos;s build it.</em>
-          </h2>
-          <div className="mt-12">
-            <Link
-              href="/contact"
-              className="px-10 py-5 bg-acid text-ink rounded-full text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-4 hover:bg-coral hover:text-paper transition-all transform hover:scale-105"
-            >
-              <span>Get in touch</span>
-              <span className="text-xl">↗</span>
+    <>
+      <section className="hero section" id="top">
+        <Reveal className="hero-copy">
+          <p className="eyebrow">
+            <span></span> Independent studio · India + everywhere
+          </p>
+          <h1>
+            Make it <em>matter.</em>
+            <br />
+            Make it memorable.
+          </h1>
+          <p className="hero-body">
+            DA🌻 partners with bold teams to turn messy ideas into clear,
+            characterful digital products.
+          </p>
+          <div className="hero-actions">
+            <Link className="button button-dark" href="/contact">
+              Start a project <span>↗</span>
+            </Link>
+            <Link className="text-link" href="/work">
+              See selected work <span>↓</span>
             </Link>
           </div>
         </Reveal>
+
+        <Reveal
+          className="hero-art"
+          aria-label="Abstract DA design studio illustration"
+          role="img"
+        >
+          <div className="art-orbit orbit-one"></div>
+          <div className="art-orbit orbit-two"></div>
+          <div className="art-sun">
+            <span>DA</span>
+          </div>
+          <div className="art-window">
+            <div className="window-top">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+            <div className="window-line line-short"></div>
+            <div className="window-line"></div>
+            <div className="window-card">
+              <b>
+                Good ideas
+                <br />
+                need good homes.
+              </b>
+              <small>designed with intent</small>
+            </div>
+          </div>
+          <span className="scribble scribble-a">
+            made with
+            <br />
+            feeling
+          </span>
+          <span className="art-flower">✺</span>
+        </Reveal>
+
+        <div className="hero-foot">
+          Scroll to explore <span>↓</span>
+        </div>
       </section>
-    </div>
+
+      <section className="marquee" aria-label="What DA does">
+        <div className="marquee-track">
+          <span>UX STRATEGY</span>
+          <b>✺</b>
+          <span>PRODUCT DESIGN</span>
+          <b>✺</b>
+          <span>WEB DEVELOPMENT</span>
+          <b>✺</b>
+          <span>BRAND SYSTEMS</span>
+          <b>✺</b>
+          <span>UX STRATEGY</span>
+          <b>✺</b>
+          <span>PRODUCT DESIGN</span>
+          <b>✺</b>
+          <span>WEB DEVELOPMENT</span>
+          <b>✺</b>
+          <span>BRAND SYSTEMS</span>
+          <b>✺</b>
+        </div>
+      </section>
+
+      <section className="section intro" id="about">
+        <Reveal>
+          <p className="section-label">( About DA )</p>
+        </Reveal>
+        <div className="intro-grid">
+          <Reveal>
+            <h2>
+              We bring the <em>why,</em> the wow and the working code.
+            </h2>
+          </Reveal>
+          <Reveal className="intro-side">
+            <p>
+              Small team. Senior craft. No bloated decks or design theatre.
+              Just focused thinking and digital experiences that make people
+              want to stay.
+            </p>
+            <Link className="text-link" href="/services">
+              How we can help <span>↘</span>
+            </Link>
+          </Reveal>
+        </div>
+        <Reveal className="principles">
+          <article>
+            <span>01</span>
+            <h3>Clear over clever</h3>
+            <p>We make useful feel effortless.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Character counts</h3>
+            <p>Every brand deserves a point of view.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Built to grow</h3>
+            <p>Beautiful systems, not one-off screens.</p>
+          </article>
+        </Reveal>
+      </section>
+
+      <section className="work-section section" id="work">
+        <Reveal className="section-heading">
+          <div>
+            <p className="section-label">( Selected directions )</p>
+            <h2>
+              Work with
+              <br />
+              <em>some spine.</em>
+            </h2>
+          </div>
+          <p>Every project begins with listening, then gets a little braver.</p>
+        </Reveal>
+
+        <div className="project-grid">
+          <Reveal>
+            <Link
+              className="project project-tall"
+              href="/work/aurora"
+              aria-label="Read Aurora concept case study"
+            >
+              <div className="project-art aurora-art">
+                <div className="aurora-phone">
+                  <div className="phone-pill"></div>
+                  <span>flow</span>
+                  <i></i>
+                  <i></i>
+                  <b>₹ 24,280</b>
+                  <small>your money, in motion</small>
+                </div>
+                <div className="aurora-ring"></div>
+                <p>
+                  FINANCE,
+                  <br />
+                  WITHOUT
+                  <br />
+                  THE FUSS.
+                </p>
+              </div>
+              <div className="project-meta">
+                <div>
+                  <p>01 / Fintech</p>
+                  <h3>Aurora</h3>
+                </div>
+                <span className="project-arrow">↗</span>
+              </div>
+            </Link>
+          </Reveal>
+
+          <Reveal>
+            <Link
+              className="project"
+              href="/work/terra"
+              aria-label="Read Terra House concept case study"
+            >
+              <div className="project-art terra-art">
+                <div className="terra-sun"></div>
+                <div className="terra-hill hill-a"></div>
+                <div className="terra-hill hill-b"></div>
+                <div className="terra-card">
+                  <span>01 — 06</span>
+                  <b>
+                    Slow down.
+                    <br />
+                    Find your way.
+                  </b>
+                  <i>Explore stays</i>
+                </div>
+              </div>
+              <div className="project-meta">
+                <div>
+                  <p>02 / Travel</p>
+                  <h3>Terra House</h3>
+                </div>
+                <span className="project-arrow">↗</span>
+              </div>
+            </Link>
+          </Reveal>
+
+          <Reveal>
+            <Link
+              className="project"
+              href="/work/lune"
+              aria-label="Read Lune concept case study"
+            >
+              <div className="project-art lune-art">
+                <div className="lune-grid"></div>
+                <div className="lune-orb"></div>
+                <div className="lune-panel">
+                  <span>LUNE / 01</span>
+                  <b>
+                    Rest is
+                    <br />a ritual.
+                  </b>
+                  <i>Designed for better nights</i>
+                </div>
+              </div>
+              <div className="project-meta">
+                <div>
+                  <p>03 / Wellness</p>
+                  <h3>Lune</h3>
+                </div>
+                <span className="project-arrow">↗</span>
+              </div>
+            </Link>
+          </Reveal>
+        </div>
+        <Reveal>
+          <p className="project-note">
+            Concept directions shown for demonstration. Your project gets its
+            own story, not a recycled skin.
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="services-section section" id="services">
+        <Reveal className="services-head">
+          <p className="section-label">( What we do )</p>
+          <h2>
+            From loose
+            <br />
+            thought to <em>living thing.</em>
+          </h2>
+        </Reveal>
+        <div className="service-list">
+          <Reveal>
+            <details className="service" open>
+              <summary>
+                <span>01</span>
+                <h3>UX strategy & research</h3>
+                <i>+</i>
+              </summary>
+              <div className="service-detail">
+                <p>
+                  We find the real problem before drawing the first rectangle.
+                  Research, journeys, workshops and product clarity for teams
+                  ready to make smarter calls.
+                </p>
+                <span>
+                  Discovery workshops · UX audit · User flows · Information
+                  architecture
+                  <br />
+                  <Link href="/services/ux-strategy">Explore service ↗</Link>
+                </span>
+              </div>
+            </details>
+          </Reveal>
+
+          <Reveal>
+            <details className="service">
+              <summary>
+                <span>02</span>
+                <h3>Product & UI/UX design</h3>
+                <i>+</i>
+              </summary>
+              <div className="service-detail">
+                <p>
+                  Interfaces with a pulse: useful, recognisable and easy to grow.
+                  We turn strategy into systems your users and developers will
+                  genuinely understand.
+                </p>
+                <span>
+                  Product design · Design systems · Prototypes · Usability testing
+                  <br />
+                  <Link href="/services/product-design">Explore service ↗</Link>
+                </span>
+              </div>
+            </details>
+          </Reveal>
+
+          <Reveal>
+            <details className="service">
+              <summary>
+                <span>03</span>
+                <h3>Web design & development</h3>
+                <i>+</i>
+              </summary>
+              <div className="service-detail">
+                <p>
+                  Sites that make a first impression and a second conversion.
+                  Thoughtful, responsive builds that are as quick under the hood
+                  as they are nice to look at.
+                </p>
+                <span>
+                  Websites · Landing pages · Frontend builds · CMS integration
+                  <br />
+                  <Link href="/services/web-development">Explore service ↗</Link>
+                </span>
+              </div>
+            </details>
+          </Reveal>
+
+          <Reveal>
+            <details className="service">
+              <summary>
+                <span>04</span>
+                <h3>Brand systems & motion</h3>
+                <i>+</i>
+              </summary>
+              <div className="service-detail">
+                <p>
+                  We give growing brands a visual language they can use
+                  anywhere—from the first launch slide to the five-hundredth
+                  social post.
+                </p>
+                <span>
+                  Visual identity · Art direction · Motion language · Social
+                  toolkit
+                  <br />
+                  <Link href="/services/brand-motion">Explore service ↗</Link>
+                </span>
+              </div>
+            </details>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="process section">
+        <Reveal className="process-intro">
+          <p className="section-label">( The DA way )</p>
+          <h2>
+            Less mystery.
+            <br />
+            More momentum.
+          </h2>
+        </Reveal>
+        <ol className="process-list">
+          <Reveal>
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Listen hard</h3>
+                <p>
+                  We get close to the business, the people and the inconvenient
+                  truths.
+                </p>
+              </div>
+              <small>Discover</small>
+            </li>
+          </Reveal>
+          <Reveal>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Choose a direction</h3>
+                <p>
+                  We make the product and brand choices worth committing to.
+                </p>
+              </div>
+              <small>Define</small>
+            </li>
+          </Reveal>
+          <Reveal>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Make it feel right</h3>
+                <p>
+                  We prototype, pressure-test and bring the visual magic.
+                </p>
+              </div>
+              <small>Design</small>
+            </li>
+          </Reveal>
+          <Reveal>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Put it in the world</h3>
+                <p>
+                  We build the details properly, so your experience holds up.
+                </p>
+              </div>
+              <small>Develop</small>
+            </li>
+          </Reveal>
+        </ol>
+      </section>
+
+      <section className="statement-section">
+        <div className="statement-art" aria-hidden="true">
+          <span>✺</span>
+          <span>✺</span>
+          <span>✺</span>
+        </div>
+        <Reveal>
+          <blockquote className="reveal">
+            “The internet has enough <em>forgettable.</em> Let&apos;s make your
+            corner feel like a place people want to return to.”
+          </blockquote>
+        </Reveal>
+      </section>
+
+      <section className="contact section" id="contact">
+        <Reveal className="contact-intro">
+          <p className="section-label">( Start something )</p>
+          <h2>
+            Tell us
+            <br />
+            what&apos;s <em>blooming.</em>
+          </h2>
+          <p>
+            Big idea, small question, early sketch—we&apos;re here for it. Share a
+            few details and we&apos;ll come back with a thoughtful next step.
+          </p>
+          <div className="contact-direct">
+            <a href="mailto:hello@da-studio.in">hello@da-studio.in ↗</a>
+            <span>Replies within 1–2 working days</span>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <LeadForm />
+        </Reveal>
+      </section>
+    </>
   );
 }

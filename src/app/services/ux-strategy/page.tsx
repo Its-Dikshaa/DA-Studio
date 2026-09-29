@@ -1,60 +1,148 @@
-import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "UX Strategy & Research — DA🌻",
+  title: "UX strategy & research — DA🌻",
   description: "UX strategy and user research services by DA🌻.",
 };
 
 export default function UxStrategyPage() {
   return (
-    <div className="px-6 md:px-16 py-16 max-w-5xl mx-auto">
-      <Reveal>
-        <span className="font-mono text-xs uppercase tracking-wider text-coral mb-3 block">
-          Service 01
-        </span>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8">
-          UX Strategy & Research
-        </h1>
-        <p className="text-ink/75 text-lg md:text-xl leading-relaxed mb-12">
-          Before writing code or pushing pixels, we help you ask the right questions, clarify user journeys, and eliminate feature clutter.
-        </p>
-      </Reveal>
-
-      <Reveal delay={0.2} className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-ink/15 pt-12">
-        <div>
-          <h3 className="text-2xl font-bold mb-4">What we do</h3>
-          <ul className="space-y-3 text-ink/80 text-base">
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Product positioning & feature framing
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> User interviews & UX friction mapping
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Information architecture & wireframing
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Competitive UX benchmarking
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Deliverables</h3>
-          <p className="text-ink/70 leading-relaxed text-sm">
-            Comprehensive UX strategy deck, interactive wireframe maps, user persona insights, and prioritized product roadmap.
+    <>
+      <section className="page-hero page-hero--acid service-page-hero" id="top">
+        <Reveal className="page-hero-copy">
+          <p className="crumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <Link href="/services">Services</Link>
+            <span>/</span> UX strategy
           </p>
-        </div>
-      </Reveal>
+          <h1>
+            Find the
+            <br />
+            <em>right thing</em>
+            <br />
+            to make.
+          </h1>
+          <p>
+            Research and product strategy for teams that would rather learn early
+            than repair later.
+          </p>
+        </Reveal>
+        <Reveal className="hero-orbital" aria-hidden="true">
+          <b>?</b>
+          <i>
+            good questions
+            <br />
+            change everything
+          </i>
+        </Reveal>
+      </section>
 
-      <div className="mt-16 pt-8 border-t border-ink/15 flex justify-between items-center">
-        <Link href="/services" className="font-mono text-xs uppercase text-ink/70 hover:text-ink">
-          ← Back to Services
+      <section className="page-section">
+        <Reveal className="section-grid">
+          <div>
+            <span className="chapter">( What this solves )</span>
+            <h2>
+              When the problem
+              <br />
+              is still a little <em>foggy.</em>
+            </h2>
+          </div>
+          <div className="body-copy">
+            <p>
+              Before a product gets beautiful, it needs to get honest. We help
+              teams understand the audience, simplify the opportunity and decide
+              what deserves to be built first.
+            </p>
+            <p>
+              We blend qualitative research, product thinking and rapid framing
+              into a practical direction your team can act on—not a deck that
+              gathers dust.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="page-section page-section--compact">
+        <Reveal>
+          <span className="chapter">( Typical outputs )</span>
+        </Reveal>
+        <div className="deliverable-grid">
+          <Reveal as="article">
+            <span>01</span>
+            <h3>Signal finding</h3>
+            <p>
+              User interviews, stakeholder conversations and competitive signals to
+              reveal what is actually getting in people’s way.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02</span>
+            <h3>Journey clarity</h3>
+            <p>
+              Clear flows and service moments that show where users lose momentum
+              and where the experience can win it back.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03</span>
+            <h3>Product direction</h3>
+            <p>
+              A shared point of view on audience, value proposition, priorities and
+              what a useful first version should prove.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04</span>
+            <h3>Testable prototype</h3>
+            <p>
+              Enough tangible product thinking to put a direction in front of
+              people and learn before committing to build.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-section pale-acid">
+        <Reveal>
+          <span className="chapter">( Our rhythm )</span>
+        </Reveal>
+        <div className="service-flow">
+          <Reveal as="article">
+            <span>01 / Listen</span>
+            <h3>Get close</h3>
+            <p>Align on the business pressure, users and decisions worth making.</p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02 / Look</span>
+            <h3>Find signal</h3>
+            <p>Research the actual behaviour, not just the assumed behaviour.</p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03 / Frame</span>
+            <h3>Choose focus</h3>
+            <p>Turn observations into opportunities a team can rally around.</p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04 / Test</span>
+            <h3>Make it real</h3>
+            <p>Use prototypes to de-risk the big choices before delivery begins.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-cta">
+        <h2>
+          Need a better
+          <br />
+          question before
+          <br />a <em>bigger build?</em>
+        </h2>
+        <Link className="button" href="/contact">
+          Start a conversation <span>↗</span>
         </Link>
-        <Link href="/contact" className="font-bold text-base text-coral hover:underline">
-          Book a UX Strategy Session ↗
-        </Link>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

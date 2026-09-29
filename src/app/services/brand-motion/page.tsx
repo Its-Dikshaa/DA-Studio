@@ -1,60 +1,161 @@
-import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Brand Systems & Motion — DA🌻",
+  title: "Brand systems & motion — DA🌻",
   description: "Brand systems and motion design services by DA🌻.",
 };
 
 export default function BrandMotionPage() {
   return (
-    <div className="px-6 md:px-16 py-16 max-w-5xl mx-auto">
-      <Reveal>
-        <span className="font-mono text-xs uppercase tracking-wider text-coral mb-3 block">
-          Service 04
-        </span>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8">
-          Brand Systems & Motion
-        </h1>
-        <p className="text-ink/75 text-lg md:text-xl leading-relaxed mb-12">
-          Defining kinetic visual identity systems, typographic hierarchy, logo movement vocabulary, and UI motion guidelines.
-        </p>
-      </Reveal>
-
-      <Reveal delay={0.2} className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-ink/15 pt-12">
-        <div>
-          <h3 className="text-2xl font-bold mb-4">What we do</h3>
-          <ul className="space-y-3 text-ink/80 text-base">
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Visual identity & typography direction
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Kinetic logo assets & Lottie animations
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Brand guidelines & asset toolkits
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> UI motion choreography & easing curves
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Deliverables</h3>
-          <p className="text-ink/70 leading-relaxed text-sm">
-            Brand guidelines manual, vector logo suite, motion token specs, Lottie/SVG kinetic animation assets, and social template kits.
+    <>
+      <section className="page-hero page-hero--coral service-page-hero" id="top">
+        <Reveal className="page-hero-copy">
+          <p className="crumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <Link href="/services">Services</Link>
+            <span>/</span> Brand systems & motion
           </p>
-        </div>
-      </Reveal>
+          <h1>
+            A personality
+            <br />
+            that knows
+            <br />
+            <em>how to behave.</em>
+          </h1>
+          <p>
+            Identity, design systems and motion language for businesses that are
+            ready to look as intentional as they are.
+          </p>
+        </Reveal>
+        <Reveal className="hero-orbital" aria-hidden="true">
+          <b>✺</b>
+          <i>
+            recognisable
+            <br />
+            by design
+          </i>
+        </Reveal>
+      </section>
 
-      <div className="mt-16 pt-8 border-t border-ink/15 flex justify-between items-center">
-        <Link href="/services" className="font-mono text-xs uppercase text-ink/70 hover:text-ink">
-          ← Back to Services
+      <section className="page-section">
+        <Reveal className="section-grid">
+          <div>
+            <span className="chapter">( The identity work )</span>
+            <h2>
+              Build the things
+              <br />
+              people <em>remember.</em>
+            </h2>
+          </div>
+          <div className="body-copy">
+            <p>
+              A logo is a beginning, not a brand. We help teams create a visual
+              and verbal system with the flexibility to show up everywhere and
+              the discipline to still feel like itself.
+            </p>
+            <p>
+              Our motion work makes that system feel alive: never movement for
+              movement’s sake, always a cue that helps a brand communicate with a
+              bit more confidence.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="page-section page-section--compact">
+        <Reveal>
+          <span className="chapter">( Typical outputs )</span>
+        </Reveal>
+        <div className="deliverable-grid">
+          <Reveal as="article">
+            <span>01</span>
+            <h3>Brand foundation</h3>
+            <p>
+              A point of view on positioning, personality, audience and the one
+              idea that should hold every touchpoint together.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02</span>
+            <h3>Visual identity</h3>
+            <p>
+              Logo, colour, type, imagery and graphic devices with enough range
+              to work hard without getting boring.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03</span>
+            <h3>Motion language</h3>
+            <p>
+              Purposeful transitions, micro-interactions and a movement
+              vocabulary that gives digital touchpoints a pulse.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04</span>
+            <h3>Brand toolkit</h3>
+            <p>
+              Guidelines, templates and ready-to-use assets that help an internal
+              team stay recognisable as it grows.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-section pale-coral">
+        <Reveal>
+          <span className="chapter">( Our rhythm )</span>
+        </Reveal>
+        <div className="service-flow">
+          <Reveal as="article">
+            <span>01 / Listen</span>
+            <h3>Find the truth</h3>
+            <p>
+              Get to the human insight and business ambition worth building a
+              voice around.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02 / Name it</span>
+            <h3>Choose a point of view</h3>
+            <p>
+              Give the brand a clear character that helps decisions get less
+              subjective.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03 / Make it visible</span>
+            <h3>Build the world</h3>
+            <p>
+              Turn the idea into an identity with enough detail to be genuinely
+              useful.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04 / Set it moving</span>
+            <h3>Give it rhythm</h3>
+            <p>
+              Show how the system responds, transitions and lives beyond a
+              static page.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-cta">
+        <h2>
+          Ready for a brand
+          <br />
+          with a little more
+          <br />
+          <em>gravitational pull?</em>
+        </h2>
+        <Link className="button" href="/contact">
+          Bring us the brief <span>↗</span>
         </Link>
-        <Link href="/contact" className="font-bold text-base text-coral hover:underline">
-          Discuss a Brand Motion Brief ↗
-        </Link>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

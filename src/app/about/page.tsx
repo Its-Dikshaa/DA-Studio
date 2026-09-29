@@ -1,84 +1,143 @@
-import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "About — DA🌻 Studio",
+  title: "About — DA🌻",
   description: "Meet DA🌻, an independent design and development studio.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="px-6 md:px-16 py-16">
-      <Reveal>
-        <div className="max-w-4xl mb-20">
-          <span className="font-mono text-xs uppercase tracking-wider text-coral mb-3 block">
-            About Studio
-          </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-ink mb-8 leading-[0.93]">
-            Small, sharp studio for ambitious digital products.
-          </h1>
-          <p className="text-ink/75 text-lg md:text-2xl leading-relaxed font-light">
-            We are a focused design and development partner building software with character, speed, and craftsmanship.
+    <>
+      <section className="page-hero page-hero--coral" id="top">
+        <Reveal className="page-hero-copy">
+          <p className="crumb">
+            <Link href="/">Home</Link>
+            <span>/</span> About
           </p>
-        </div>
-      </Reveal>
-
-      {/* Principles Section */}
-      <section className="py-16 border-t border-ink/15">
-        <Reveal>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-12">
-            Our Studio Values
-          </h2>
+          <h1>
+            Small enough to
+            <br />
+            care. Sharp enough
+            <br />
+            to <em>change things.</em>
+          </h1>
+          <p>
+            DA🌻 is an independent design and development studio for ambitious
+            digital ideas.
+          </p>
         </Reveal>
+        <Reveal className="hero-orbital" aria-hidden="true">
+          <b>DA</b>
+          <i>
+            big care,
+            <br />
+            small ego
+          </i>
+        </Reveal>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              num: "01",
-              title: "No fluff, high intent",
-              desc: "We skip heavy agency bureaucracy and work directly with founders and product owners.",
-            },
-            {
-              num: "02",
-              title: "Code is design",
-              desc: "Interfaces aren't static Figma frames; we design with motion, responsiveness, and code in mind.",
-            },
-            {
-              num: "03",
-              title: "Craft in details",
-              desc: "From custom cursor glow feedback to sub-second page loads, micro-details define macro quality.",
-            },
-          ].map((principle, idx) => (
-            <Reveal key={idx} delay={idx * 0.1}>
-              <div className="p-8 bg-paper border border-ink/15 rounded-2xl h-full flex flex-col justify-between">
-                <span className="font-mono text-xs text-coral">{principle.num}</span>
-                <div className="mt-8">
-                  <h3 className="text-2xl font-bold mb-3">{principle.title}</h3>
-                  <p className="text-ink/70 text-sm leading-relaxed">{principle.desc}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+      <section className="page-section">
+        <Reveal className="section-grid">
+          <div>
+            <span className="chapter">( A little about us )</span>
+            <h2>
+              We like work that
+              <br />
+              has a <em>pulse.</em>
+            </h2>
+          </div>
+          <div className="body-copy">
+            <p>
+              DA🌻 was made for teams who need senior thinking without the endless
+              layers, spreadsheet theatre or unnecessary distance.
+            </p>
+            <p>
+              We bring together product strategy, visual direction and practical
+              development so that ideas are not just well-presented—they make
+              sense in the hands of real people.
+            </p>
+            <p>
+              <strong>
+                Our size is intentional: close enough to ask better questions,
+                flexible enough to move when the answer changes.
+              </strong>
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="page-section page-section--compact pale-acid">
+        <Reveal>
+          <span className="chapter">( A deliberately small studio )</span>
+        </Reveal>
+        <div className="team-grid">
+          <Reveal as="article" className="team-card">
+            <span className="team-badge">?</span>
+            <h3>You</h3>
+            <p>Founder / team with the hard problem</p>
+          </Reveal>
+          <Reveal as="article" className="team-card">
+            <span className="team-badge">✺</span>
+            <h3>DA</h3>
+            <p>Strategy, design & development partner</p>
+          </Reveal>
+          <Reveal as="article" className="team-card">
+            <span className="team-badge">↗</span>
+            <h3>The thing</h3>
+            <p>A product people will understand</p>
+          </Reveal>
         </div>
       </section>
 
-      {/* CTA Box */}
-      <Reveal className="mt-20">
-        <div className="p-12 md:p-16 bg-acid text-ink rounded-3xl flex flex-col md:flex-row justify-between items-center gap-8">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-2">
-              Think we&apos;d make a good team?
+      <section className="page-section">
+        <div className="section-grid">
+          <Reveal>
+            <span className="chapter">( What keeps us honest )</span>
+            <h2>
+              Some things are
+              <br />
+              not <em>negotiable.</em>
             </h2>
-            <p className="text-ink/80 text-base">Let&apos;s talk about your upcoming build or redesign.</p>
+          </Reveal>
+          <div className="values-list">
+            <Reveal as="article">
+              <span>01</span>
+              <h3>Say the useful thing</h3>
+              <p>
+                We will be kind, direct and clear—even when the best answer is to
+                make less, not more.
+              </p>
+            </Reveal>
+            <Reveal as="article">
+              <span>02</span>
+              <h3>Make it make sense</h3>
+              <p>
+                Visual confidence is great. It earns its place by helping a
+                person decide, understand or move forward.
+              </p>
+            </Reveal>
+            <Reveal as="article">
+              <span>03</span>
+              <h3>Leave it stronger</h3>
+              <p>
+                We build systems, not fragile showpieces, so your team can keep
+                moving after the launch moment.
+              </p>
+            </Reveal>
           </div>
-          <Link
-            href="/contact"
-            className="px-8 py-4 bg-ink text-paper rounded-full text-xs font-extrabold uppercase tracking-wider hover:bg-coral transition-colors shrink-0"
-          >
-            Say Hello ↗
-          </Link>
         </div>
-      </Reveal>
-    </div>
+      </section>
+
+      <section className="page-cta">
+        <h2>
+          Think we&apos;d make
+          <br />a good <em>team?</em>
+        </h2>
+        <Link className="button" href="/contact">
+          Say hello <span>↗</span>
+        </Link>
+      </section>
+    </>
   );
 }

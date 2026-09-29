@@ -1,60 +1,161 @@
-import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Web Design & Development — DA🌻",
-  description: "Website design and Next.js development services by DA🌻.",
+  title: "Web design & development — DA🌻",
+  description: "Website design and development services by DA🌻.",
 };
 
 export default function WebDevelopmentPage() {
   return (
-    <div className="px-6 md:px-16 py-16 max-w-5xl mx-auto">
-      <Reveal>
-        <span className="font-mono text-xs uppercase tracking-wider text-coral mb-3 block">
-          Service 03
-        </span>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8">
-          Web Design & Next.js Build
-        </h1>
-        <p className="text-ink/75 text-lg md:text-xl leading-relaxed mb-12">
-          Engineering production Next.js applications, custom Framer Motion animations, TypeScript integration, and optimized Web Vitals.
-        </p>
-      </Reveal>
-
-      <Reveal delay={0.2} className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-ink/15 pt-12">
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Tech Stack</h3>
-          <ul className="space-y-3 text-ink/80 text-base">
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Next.js 16 (App Router) & React 19
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> TypeScript & Strict Type-Safety
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Tailwind CSS & Responsive Layouts
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-coral">✺</span> Framer Motion / Motion Animations
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Performance Standards</h3>
-          <p className="text-ink/70 leading-relaxed text-sm">
-            Sub-second LCP, 100/100 Core Web Vitals, automated SEO metadata, dynamic OpenGraph image generation, and clean Vercel/Netlify deployment.
+    <>
+      <section className="page-hero page-hero--ink service-page-hero" id="top">
+        <Reveal className="page-hero-copy">
+          <p className="crumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <Link href="/services">Services</Link>
+            <span>/</span> Web design & development
           </p>
-        </div>
-      </Reveal>
+          <h1>
+            Websites people
+            <br />
+            want to <em>stay on.</em>
+          </h1>
+          <p>
+            High-performing design and development for launches, rebrands and
+            digital homes that need to do more than look alive.
+          </p>
+        </Reveal>
+        <Reveal className="hero-orbital" aria-hidden="true">
+          <b>&lt;/&gt;</b>
+          <i>
+            made to move,
+            <br />
+            made to load
+          </i>
+        </Reveal>
+      </section>
 
-      <div className="mt-16 pt-8 border-t border-ink/15 flex justify-between items-center">
-        <Link href="/services" className="font-mono text-xs uppercase text-ink/70 hover:text-ink">
-          ← Back to Services
+      <section className="page-section">
+        <Reveal className="section-grid">
+          <div>
+            <span className="chapter">( Design meets build )</span>
+            <h2>
+              Every beautiful
+              <br />
+              decision needs to
+              <br />
+              <em>survive the browser.</em>
+            </h2>
+          </div>
+          <div className="body-copy">
+            <p>
+              We design and build websites as one connected process. That means
+              the motion has a job, the responsive version is not an
+              afterthought and the final thing is as considered as the Figma
+              file.
+            </p>
+            <p>
+              Whether you need a focused conversion page or a full editorial brand
+              world, we combine strategy, storytelling, UI and front-end craft.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="page-section page-section--compact">
+        <Reveal>
+          <span className="chapter">( Typical outputs )</span>
+        </Reveal>
+        <div className="deliverable-grid">
+          <Reveal as="article">
+            <span>01</span>
+            <h3>Website strategy</h3>
+            <p>
+              Audience, goals, sitemap and message hierarchy that decide what the
+              website needs to do before it tries to impress.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02</span>
+            <h3>Visual direction</h3>
+            <p>
+              Page systems, art direction and interaction language that give a
+              responsive site one strong point of view.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03</span>
+            <h3>Front-end build</h3>
+            <p>
+              Clean, responsive implementation with performance, accessible
+              interactions and content publishing in mind.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04</span>
+            <h3>Launch support</h3>
+            <p>
+              QA, analytics considerations and a sensible handover so publishing
+              feels steady on day one.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-section pale-coral">
+        <Reveal>
+          <span className="chapter">( Our rhythm )</span>
+        </Reveal>
+        <div className="service-flow">
+          <Reveal as="article">
+            <span>01 / Plan</span>
+            <h3>Get the story straight</h3>
+            <p>
+              Set the message, hierarchy and conversion path before pixels start
+              to pile up.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>02 / Design</span>
+            <h3>Make it felt</h3>
+            <p>
+              Build the visual world and page moments people will want to
+              explore.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>03 / Develop</span>
+            <h3>Make it real</h3>
+            <p>
+              Translate the detail into responsive code that behaves properly
+              everywhere.
+            </p>
+          </Reveal>
+          <Reveal as="article">
+            <span>04 / Launch</span>
+            <h3>Make it ready</h3>
+            <p>
+              Test the edges, polish the performance and put your new digital
+              home to work.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="page-cta">
+        <h2>
+          Need your web
+          <br />
+          presence to pull
+          <br />
+          its <em>weight?</em>
+        </h2>
+        <Link className="button" href="/contact">
+          Start a website project <span>↗</span>
         </Link>
-        <Link href="/contact" className="font-bold text-base text-coral hover:underline">
-          Build a Next.js Web App ↗
-        </Link>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

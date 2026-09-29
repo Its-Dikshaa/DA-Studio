@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ReactNode, CSSProperties } from "react";
+import { useEffect, useRef, ReactNode, CSSProperties } from "react";
 
 interface RevealProps {
   children?: ReactNode;
@@ -19,18 +18,36 @@ export default function Reveal({
   "aria-label": ariaLabel,
   style,
 }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}
-      className={`reveal is-visible ${className}`}
+    <div
+      ref={ref}
+      className={`reveal ${className}`}
       role={role}
       aria-label={ariaLabel}
       style={style}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

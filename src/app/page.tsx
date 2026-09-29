@@ -415,7 +415,7 @@ export default function Home() {
           <span>✺</span>
         </div>
         <Reveal>
-          <blockquote className="reveal">
+          <blockquote>
             “The internet has enough <em>forgettable.</em> Let&apos;s make your
             corner feel like a place people want to return to.”
           </blockquote>

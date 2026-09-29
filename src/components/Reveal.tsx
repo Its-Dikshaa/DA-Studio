@@ -32,11 +32,22 @@ export default function Reveal({
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.05, rootMargin: "50px 0px" }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Safety fallback: Ensure element is visible after short delay even if IntersectionObserver event was delayed
+    const timer = setTimeout(() => {
+      if (el && !el.classList.contains("is-visible")) {
+        el.classList.add("is-visible");
+      }
+    }, 300);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

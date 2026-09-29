@@ -25,9 +25,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DA🌻 — Independent Design & Development Studio",
+  title: "DA🌻 — Design with a point of view",
   description:
-    "An original, responsive digital studio for UI/UX strategy, product design, web development, and motion systems.",
+    "A small, sharp design and development studio for ambitious digital products.",
 };
 
 export default function RootLayout({
@@ -38,12 +38,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${playfair.variable} ${dmMono.variable} h-full antialiased`}
+      className={`${manrope.variable} ${playfair.variable} ${dmMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink selection:bg-acid selection:text-ink">
+      <body>
+        <div className="noise" aria-hidden="true"></div>
         <CursorGlow />
         <Header />
-        <main className="flex-1 pt-20">{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F4F0E8;
+  --color-ink: #17231B;
+  --color-acid: #D6FF58;
+  --color-coral: #F66652;
+  --color-orange: #FA7921;
+  --color-violet: #B0A8FF;
+  --color-line: rgba(23, 35, 27, 0.15);
+
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+  --font-mono: var(--font-dm-mono), monospace;
+}
+
+:root {
+  --paper: #F4F0E8;
+  --ink: #17231B;
+  --acid: #D6FF58;
+  --coral: #F66652;
+  --orange: #FA7921;
+  --violet: #B0A8FF;
+  --line: rgba(23, 35, 27, 0.15);
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-manrope), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Noise overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(23, 35, 27, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom grid lines background */
+.grid-lines {
+  background-image: linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+  background-size: 32px 32px;
+}

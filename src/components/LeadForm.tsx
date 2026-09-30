@@ -22,14 +22,38 @@ export default function LeadForm() {
     setSubmitting(true);
     setStatus(null);
 
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get("name")?.toString() || "",
+      email: formData.get("email")?.toString() || "",
+      company: formData.get("company")?.toString() || "",
+      phone: formData.get("phone")?.toString() || "",
+      service: formData.get("service")?.toString() || "",
+      budget: formData.get("budget")?.toString() || "",
+      timeline: formData.get("timeline")?.toString() || "",
+      message: formData.get("message")?.toString() || "",
+    };
+
     try {
-      await new Promise((r) => setTimeout(r, 1000));
-      form.reset();
-      setStatus({
-        text: "Lovely. Your note is on its way — we’ll reply in 1–2 working days.",
-        type: "success",
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-    } catch {
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        form.reset();
+        setStatus({
+          text: "Lovely. Your note is on its way — we’ll reply in 1–2 working days.",
+          type: "success",
+        });
+      } else {
+        throw new Error(result.error || "Submission failed");
+      }
+    } catch (err) {
+      console.error("Form submission error:", err);
       setStatus({
         text: "Could not send this just now. Please email hello@da-studio.in instead.",
         type: "error",

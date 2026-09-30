@@ -17,8 +17,9 @@ export default function Reveal({
   role,
   "aria-label": ariaLabel,
   style,
+  as: Component = "div",
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -50,8 +51,10 @@ export default function Reveal({
     };
   }, []);
 
+  const Element = Component as any;
+
   return (
-    <div
+    <Element
       ref={ref}
       className={`reveal ${className}`}
       role={role}
@@ -59,6 +62,6 @@ export default function Reveal({
       style={style}
     >
       {children}
-    </div>
+    </Element>
   );
 }
